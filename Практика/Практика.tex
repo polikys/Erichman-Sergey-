@@ -1,0 +1,267 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphics}
+\usepackage{pbox}
+\usepackage[x11names]{xcolor}
+\definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+\definecolor{royalazure}{rgb}{0.0, 0.22, 0.66}
+\usepackage[colorlinks=true,linkcolor=royalazure]{hyperref}
+\usepackage{tikz, tkz-fct, pgfplots}
+\usetikzlibrary{arrows}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm
+} 
+\usepackage[labelsep=period]{caption}
+% ----------------- Commands ----------------- 
+
+\newcommand{\eps}{\varepsilon}
+\newcommand\tline[2]{$\underset{\text{#1}}{\text{\underline{\hspace{#2}}}}$}
+
+% ----------------- Set graphics path ----------------- 
+\begin{document}
+	\pagestyle{empty}
+	
+	% ----------------------Title----------------------------------
+	\centerline{\large Министерство науки и высшего образования}	
+	\centerline{\large Федеральное государственное бюджетное образовательное}
+	\centerline{\large учреждение высшего образования}
+	\centerline{\large ``Московский государственный технический университет}
+	\centerline{\large имени Н.Э. Баумана}
+	\centerline{\large (национальный исследовательский университет)''}
+	\centerline{\large (МГТУ им. Н.Э. Баумана)}
+	\hrule
+	\vspace{0.5cm}
+	\begin{figure}[h]
+		\center
+		\includegraphics[height=0.35\linewidth]{bmstu-logo-small.png}
+	\end{figure}
+	\begin{center}
+		\large	
+		\begin{tabular}{c}
+			Факультет ``Фундаментальные науки'' \\
+			Кафедра ``Высшая математика''		
+		\end{tabular}
+	\end{center}
+	\vspace{0.5cm}
+	\begin{center}
+		\LARGE \bf	
+		\begin{tabular}{c}
+			\textsc{Отчёт} \\
+			по учебной практике \\
+			за 1 семестр 2020---2021 гг.
+		\end{tabular}
+	\end{center}
+	\vspace{0.5cm}
+	\begin{center}
+		\large
+		\begin{tabular}{p{5.3cm}ll}
+			\pbox{5.45cm}{
+				Руководитель практики,\\
+				ст. преп. кафедры ФН1} 	& \tline{\it(подпись)}{5cm} & Кравченко О.В. \\[0.5cm]
+			студент группы ФН1--21 		& \tline{\it(подпись)}{5cm} & Эрихман C.Н.
+		\end{tabular}
+	\end{center}
+	\vfill
+	\begin{center}
+		\large	
+		\begin{tabular}{c}
+			Москва, \\
+			2020 г.
+		\end{tabular}
+	\end{center}
+\newpage
+\newpage	
+\tableofcontents
+%------------------Table of contents----------------------
+\newpage
+\section{Цели и задачи практики}	
+\subsection{Цели}
+--- развитие компетенций, способствующих успешному освоению материала бакалавриата и необходимых в будущей профессиональной деятельности.
+\subsection{Задачи}
+\begin{enumerate}
+	\item Знакомство с программными средствами, необходимыми в будущей профессиональной деятельности.
+	\item Развитие умения поиска необходимой информации в специальной литературе и других источниках.
+	\item Развитие навыков составления отчётов и презентации результатов.
+\end{enumerate}
+\subsection{Индивидуальное задание}	
+\begin{enumerate}
+	\item Изучить способы отображения математической информации в системе вёртски \LaTeX.
+	\item Изучить возможности  системы контроля версий \textsf{Git}.
+	\item Научиться верстать математические тексты, содержащие формулы и графики в системе \LaTeX.
+	Для этого, выполнить установку свободно распространяемого дистрибутива \textsf{TeXLive} и оболочки \textsf{TeXStudio}.
+	\item Оформить в системе \LaTeX типовые расчёты по курсе математического анализа согласно своему варианту.
+	\item Создать аккаунт на онлайн ресурсе \textsf{GitHub} и загрузить исходные \textsf{tex}--файлы 
+	и результат компиляции в формате \textsf{pdf}.
+\end{enumerate} 
+%---------------------------------------------------------------
+\newpage
+\section{Отчёт}
+Актуальность темы продиктована необходимостью владеть системой вёрстки \LaTeX и средой вёрстки \textsf{TeXStudio} для
+отображения текста, формул и графиков. Полученные в ходе практики навыки могут быть применены при написании
+курсовых проектов и дипломной работы, а также в дальнейшей профессиональной деятельности.
+Ситема вёрстки \LaTeX содержит большое количество инструментов (пакетов), упрощающих отображение информации в различных 
+сферах инженерной и научной деятельности. 
+%-----------------------------------------------------------------
+\newpage
+\section{Индивидуальное задание}
+%\subsection{Элементарные функции и их графики.}
+%\input{src/part1.tex}
+%==============================================================================
+\subsection{Пределы и непрерывность.}
+%---------------------------- Problem 1----------------------------------
+\subsubsection*{\center Задача № 1.}
+{\bf Условие.~}
+Дана последовательность $a_{n}=\dfrac{3n^2 + 2}{4n^2 - 1}$ и число $c=\frac{3}{4}$. Доказать, что $\lim\limits_{x\rightarrow\infty} a_{n}=c $, а именно, для каждого $\varepsilon>0$ найти наименьшее натуральное число  $N{=}N(\varepsilon)$ такое, что $|a_{n}-c|<\varepsilon$ для всех $n>N(\varepsilon)$. Заполнить таблицу: 
+\begin{center}
+	\begin{tabular}{ | p{25pt} | c | c | c | c |}
+		\hline
+		$\varepsilon$& $0{,}1$ & $0{,}01$ & $0{,}001$ \\ \hline
+		$N(\varepsilon)$ &   &   &\\
+		\hline
+	\end{tabular}
+\end{center}
+\medskip
+%=====================================================================
+{\bf Решение.~}
+Рассмотрим неравенство $a_{n}-c<\varepsilon$, $\forall\varepsilon>0$, учитывая выражение для $a_{n}$ и $c$ из условия варианта, получим 
+$$\left|\frac{3n^2 + 2}{4n^2 - 1}-\frac{3}{4}\right|<\varepsilon$$
+Неравенство запишем в виде двойного неравенства и приведём выражение под знаком модуля к общему знаменателю, получим
+$${-}\varepsilon <\dfrac{2{,}75}{4n^2 - 1}<\varepsilon$$
+Заметим, что левое неравенство выполнено для любого номера $n\in \mathbb{N}, n > 0$ поэтому, будем рассматривать правое неравенство
+$$\frac{2{,}75}{4n^2 - 1}<\varepsilon$$
+Выполнив цепочку преобразований, перепишем неравенство относительно $n$, и, учитывая, что $n\in \mathbb{N}$, получим 
+$$4n^2 - 1>\dfrac{2{,}75}{\varepsilon},$$
+$$n^2>\frac{(\dfrac{2{,}75}{\varepsilon} + 1)}{4},$$
+$$n>\dfrac{\sqrt{\dfrac{2{,}75}{\varepsilon} + 1}}{2},$$
+$$N(\varepsilon)=\biggl[\dfrac{\sqrt{\dfrac{2{,}75}{\varepsilon} + 1}}{2}\biggr],$$
+где $[\;]$ -- целая часть от числа. Заполним таблицу:
+\begin{center}
+	\begin{tabular}{ | p{25pt} | c | c | c | c |}
+		\hline
+		$\varepsilon$& $0{,}1$ & $0{,}01$ & $0{,}001$ \\ \hline
+		$N(\varepsilon)$ & 2  & 8 & 26\\
+		\hline
+	\end{tabular}
+\end{center}
+{\bf Проверка:~}
+$$|a_{3}-c|=\dfrac{11}{140}<0{,}1,$$
+$$|a_{9}-c|=\dfrac{11}{1292}<0{,}01,$$
+$$|a_{27}-c|=\dfrac{1}{1060}<0{,}001.$$
+\newpage
+% ---------------------------- Problem 2----------------------------------
+\subsubsection*{\center Задача № 2.}
+{\bf Условие.~}
+Вычислить пределы функций
+$$
+\begin{array}{cc}
+	\text{\bf(а):} &  \lim\limits_{x\rightarrow 1}\dfrac{x^3 - 3x + 2}{x^3 - x^2 - x + 1} , \\[10pt]
+	\text{\bf(б):} & \lim\limits_{x\rightarrow+\infty} \dfrac{2x + 5x^3 + x\sqrt{x}}{x^3 + \sqrt{x^6 - x\sqrt[3]{x}}} ,\\[10pt]
+	\text{\bf(в):} & \lim\limits_{x\rightarrow0} \dfrac{\sqrt{1 + x} - \sqrt{1-x}}{\sqrt[3]{1 + x} - \sqrt[3]{1 - x}},\\[10pt]
+	\text{\bf(г):} & \lim\limits_{x\rightarrow0} \biggl(1 + \sin(x)\cos(2x)\biggl)^{\ctg^3(x)}, \\[10pt]
+	\text{\bf(д):} & \lim\limits_{x\rightarrow\ +0} \biggl(\dfrac{\tan(2x) - \tan(x)}{\lg(1 + x)}\biggl)^{e^{\frac{1}{x}}} , \\[10pt]
+	\text{\bf(е):}  & \lim\limits_{x \rightarrow 1} \dfrac{\arctan(2x - 2)}{\sin(\pi x)} . \\
+\end{array}
+$$
+\\
+{\bf Решение.~}\\
+\\
+\text{\bf(а):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow 1}\dfrac{x^3 - 3x + 2}{x^3 - x^2 - x + 1} =  \lim\limits_{x\rightarrow 1}  \dfrac{(x - 1)^2(x + 2)}{(x + 1)(x - 1)^2} = \lim\limits_{x\rightarrow 1}\dfrac{x + 2}{x + 1}=\dfrac{3}{2}
+\end{array}
+$$
+\\
+\text{\bf(б):}
+$$
+\begin{array}{l}
+	\lim\limits_{x\rightarrow+\infty} \dfrac{2x + 5x^3 + x\sqrt{x}}{x^3 + \sqrt{x^6 - x\sqrt[3]{x}}}=\lim\limits_{x\rightarrow+\infty} \dfrac{5x^3}{x^3 + x^3\sqrt{1 - x^{-\frac{5}{3}}}}=\lim\limits_{x\rightarrow+\infty}\dfrac{5x^3}{2x^3}=2.5
+\end{array}
+$$
+\text{\bf(в):}
+$$
+\begin{array}{l} 
+	\lim\limits_{x\rightarrow0} \dfrac{\sqrt{1 + x} - \sqrt{1-x}}{\sqrt[3]{1 + x} - \sqrt[3]{1 - x}} = \biggl| \sqrt[n]{1 + x} \sim 1 + \frac{x}{n}, x \to 0 \biggl| = \lim\limits_{x\rightarrow0}\dfrac{1 + \frac{1}{2}x - 1 + \frac{1}{2}x}{1 + \frac{1}{3}x - 1 + \frac{1}{3}x}=\lim\limits_{x\rightarrow0} \dfrac{x}{\frac{2}{3}x} = \frac{3}{2}
+\end{array}
+$$
+\\
+\text{\bf(г):}
+$$
+\begin{array}{l}
+	\lim\limits_{x\rightarrow0} \biggl(1 + \sin(x)\cos(2x)\biggl)^{\ctg^3(x)}=\biggl| \cos{2x} \sim 1-\dfrac{4x^2}{2}, \sin(x) \sim x, \ctg^3(x) \sim \frac{1}{x^3}, x \to 0 \biggl|= \\ =  \lim\limits_{x\rightarrow0}\biggl(1 + x(1 - 2x^2)\biggl)^{\frac{1}{x^3}} =\lim\limits_{x\rightarrow0} \biggl( 1 + x - 2x^3 \biggl)^{\frac{1}{x^3} \frac{1}{x - 2x^3} (x - 2x^3)} = \lim\limits_{x\rightarrow0} e^{\frac{1}{x^3} (x - 2x^3)}=\\=\lim\limits_{x\rightarrow0}e^{\frac{1}{x^2} - 2} = \infty
+\end{array}
+$$
+\\
+\text{\bf(д):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow\ +0} \biggl(\dfrac{\tan(2x) - \tan(x)}{\lg(1 + x)}\biggl)^{e^{\frac{1}{x}}}=\lim\limits_{x\rightarrow +0} \biggl(\frac{x}{\lg(1 + x)}\biggl)^{e^\frac{1}{x}} = \biggl| \lg(1 + x) \sim \frac{x}{\ln{10}}, x \to 0 \biggl| =\\=\lim\limits_{x\rightarrow\ +0} \biggl( \dfrac{x \ln(10)}{x}\biggl)^{e^{\frac{1}{x}}} =\lim\limits_{x\rightarrow+0}\biggl( \ln(10) \biggl)^{e^{\frac{1}{x}}}=\ln(10)^{\infty}=\infty
+\end{array}
+$$
+\text{\bf(е):}
+$$
+\begin{array}{l}
+\lim\limits_{x \rightarrow 1} \dfrac{\arctan(2x - 2)}{\sin(\pi x)}=\left| y=x - 1, y \to 0\right|= \lim\limits_{y\rightarrow0}\dfrac{\arctan(2y + 2 - 2)}{\sin(\pi (y + 1))}= \\ = \biggl| \arctan(2y) \sim 2y, \sin(\pi (1 + y)) \sim -\pi y,\; y \rightarrow 0\biggl|=\\=\lim\limits_{y\rightarrow0}\dfrac{2y}{-\pi y}= \frac{-2}{\pi}
+\end{array} $$
+\subsubsection*{\center Задача № 3.}
+{\bf Условие.~}\\
+\text{\bf(а):} Показать, что данные функции
+$f(x)$ и $g(x)$ являются бесконечно малыми или бесконечно большими
+при указанном стремлении аргумента. \\
+\text{\bf(б):} Для каждой функции $f(x)$ и $g(x)$ записать главную часть
+(эквивалентную ей функцию)  вида $C(x-x_0)^{\alpha}$ при $x\rightarrow x_0$ или $Cx^{\alpha}$
+при $x\rightarrow\infty$, указать их порядки малости (роста). \\
+\text{\bf(в):} Сравнить функции $f(x)$ и $g(x)$ при указанном стремлении.
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		№ варианта & функции $f(x)$ и $g(x)$ & стремление \\[6pt]
+		\hline
+		29 & $f(x) = e^{4x} - e^x,~g(x)= \tg(4x) - \sin(3x)$ & $x\rightarrow 0$ \\
+		\hline
+	\end{tabular}
+\bigskip
+\\
+{\bf Решение.~}\\
+\end{center}
+\medskip
+\text{\bf(а):}~Покажем, что $f(x)$ и $g(x)$ бесконечно малые функции.
+\\
+$$
+\begin{array}{cc}
+f(0) = 0
+\end{array}
+$$
+\\
+$$
+\begin{array}{cc}
+g(0) = 0
+\end{array}
+$$
+\text{\bf(б):}~Так как $f(x)$ и $g(x)$ бесконечно малые функции, то эквивалентными им будут функции вида 
+$C{(x-x_{0})^{\alpha}}$ при $x\rightarrow x_{0}$. Найдём эквивалентную для $g(x)$ из условия
+
+$$
+\lim\limits_{x\rightarrow+\infty}\dfrac{g(x)}{(x-x_{0})^{\alpha}} = C,
+$$
+где $C$ --- некоторая константа. Рассмотрим предел
+$$
+\lim\limits_{x\rightarrow 0}\dfrac{g(x)}{(x)^\alpha}=\lim\limits_{x\rightarrow 0}\dfrac{\tan(4x) - \sin(3x)}{(x)^\alpha}=\lim\limits_{x\rightarrow 0}\dfrac{4x - 3x}{(x)^a}
+$$
+при $\alpha=1$ предел равен $1$, отсюда $C=1$ и \\$$ g(x)\sim x ~\text{при}~x\rightarrow 0.$$
+\\
+для $f(x)$ все аналогично. При $x\rightarrow 0$ функция $f(x)$ эквивалентна функции $4x - 1 - x + 1 = 3x$, при $x \rightarrow 0$
+$$ f(x)\sim 3x ~\text{при}~x\rightarrow 0$$
+\text{\bf(в):}~для сравнения функций $f(x)$ и $g(x)$ рассмотрим предел их данном стремлении.
+$$
+\lim\limits_{x\rightarrow 0}\dfrac{f(x)}{g(x)}=\lim\limits_{x\rightarrow0}\dfrac{3x}{x}=3
+$$
+отсюда $g(x)$ и $f(x)$ - одного порядка.
+\end{document}
+© 2021 GitHub, Inc.

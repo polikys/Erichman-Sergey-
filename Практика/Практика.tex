@@ -1,0 +1,269 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphics}
+\usepackage{pbox}
+\usepackage[x11names]{xcolor}
+\definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+\definecolor{royalazure}{rgb}{0.0, 0.22, 0.66}
+\usepackage[colorlinks=true,linkcolor=royalazure]{hyperref}
+\usepackage{tikz, tkz-fct, pgfplots}
+\usetikzlibrary{arrows}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm
+} 
+\usepackage[labelsep=period]{caption}
+% ----------------- Commands ----------------- 
+
+\newcommand{\eps}{\varepsilon}
+\newcommand\tline[2]{$\underset{\text{#1}}{\text{\underline{\hspace{#2}}}}$}
+
+% ----------------- Set graphics path ----------------- 
+\begin{document}
+	\pagestyle{empty}
+	
+	% ----------------------Title----------------------------------
+	\centerline{\large Министерство науки и высшего образования}	
+	\centerline{\large Федеральное государственное бюджетное образовательное}
+	\centerline{\large учреждение высшего образования}
+	\centerline{\large ``Московский государственный технический университет}
+	\centerline{\large имени Н.Э. Баумана}
+	\centerline{\large (национальный исследовательский университет)''}
+	\centerline{\large (МГТУ им. Н.Э. Баумана)}
+	\hrule
+	\vspace{0.5cm}
+	\begin{figure}[h]
+		\center
+		\includegraphics[height=0.35\linewidth]{bmstu-logo-small.png}
+	\end{figure}
+	\begin{center}
+		\large	
+		\begin{tabular}{c}
+			Факультет ``Фундаментальные науки'' \\
+			Кафедра ``Высшая математика''		
+		\end{tabular}
+	\end{center}
+	\vspace{0.5cm}
+	\begin{center}
+		\LARGE \bf	
+		\begin{tabular}{c}
+			\textsc{Отчёт} \\
+			по учебной практике \\
+			за 1 семестр 2020---2021 гг.
+		\end{tabular}
+	\end{center}
+	\vspace{0.5cm}
+	\begin{center}
+		\large
+		\begin{tabular}{p{5.3cm}ll}
+			\pbox{5.45cm}{
+				Руководитель практики,\\
+				ст. преп. кафедры ФН1} 	& \tline{\it(подпись)}{5cm} & Кравченко О.В. \\[0.5cm]
+			студент группы ФН1--11 		& \tline{\it(подпись)}{5cm} & Эрихман Д.Н.
+		\end{tabular}
+	\end{center}
+	\vfill
+	\begin{center}
+		\large	
+		\begin{tabular}{c}
+			Москва, \\
+			2020 г.
+		\end{tabular}
+	\end{center}
+\newpage
+\newpage	
+\tableofcontents
+%------------------Table of contents----------------------
+\newpage
+\section{Цели и задачи практики}	
+\subsection{Цели}
+--- развитие компетенций, способствующих успешному освоению материала бакалавриата и необходимых в будущей профессиональной деятельности.
+\subsection{Задачи}
+\begin{enumerate}
+	\item Знакомство с программными средствами, необходимыми в будущей профессиональной деятельности.
+	\item Развитие умения поиска необходимой информации в специальной литературе и других источниках.
+	\item Развитие навыков составления отчётов и презентации результатов.
+\end{enumerate}
+\subsection{Индивидуальное задание}	
+\begin{enumerate}
+	\item Изучить способы отображения математической информации в системе вёртски \LaTeX.
+	\item Изучить возможности  системы контроля версий \textsf{Git}.
+	\item Научиться верстать математические тексты, содержащие формулы и графики в системе \LaTeX.
+	Для этого, выполнить установку свободно распространяемого дистрибутива \textsf{TeXLive} и оболочки \textsf{TeXStudio}.
+	\item Оформить в системе \LaTeX типовые расчёты по курсе математического анализа согласно своему варианту.
+	\item Создать аккаунт на онлайн ресурсе \textsf{GitHub} и загрузить исходные \textsf{tex}--файлы 
+	и результат компиляции в формате \textsf{pdf}.
+\end{enumerate} 
+%---------------------------------------------------------------
+\newpage
+\section{Отчёт}
+Актуальность темы продиктована необходимостью владеть системой вёрстки \LaTeX и средой вёрстки \textsf{TeXStudio} для
+отображения текста, формул и графиков. Полученные в ходе практики навыки могут быть применены при написании
+курсовых проектов и дипломной работы, а также в дальнейшей профессиональной деятельности.
+Ситема вёрстки \LaTeX содержит большое количество инструментов (пакетов), упрощающих отображение информации в различных 
+сферах инженерной и научной деятельности. 
+%-----------------------------------------------------------------
+\newpage
+\section{Индивидуальное задание}
+%\subsection{Элементарные функции и их графики.}
+%\input{src/part1.tex}
+%==============================================================================
+\subsection{Пределы и непрерывность.}
+%---------------------------- Problem 1----------------------------------
+\subsubsection*{\center Задача № 1.}
+{\bf Условие.~}
+Дана последовательность $a_{n}=\dfrac{2n+3}{n+5}$ и число $c=2$. Доказать, что $\lim\limits_{x\rightarrow\infty} a_{n}=c $, а именно, для каждого $\varepsilon>0$ найти наименьшее натуральное число  $N{=}N(\varepsilon)$ такое, что $|a_{n}-c|<\varepsilon$ для всех $n>N(\varepsilon)$. Заполнить таблицу: 
+\begin{center}
+	\begin{tabular}{ | p{25pt} | c | c | c | c |}
+		\hline
+		$\varepsilon$& $0{,}1$ & $0{,}01$ & $0{,}001$ \\ \hline
+		$N(\varepsilon)$ &   &   &\\
+		\hline
+	\end{tabular}
+\end{center}
+\medskip
+%=====================================================================
+{\bf Решение.~}
+Рассмотрим неравенство $a_{n}-c<\varepsilon$, $\forall\varepsilon>0$, учитывая выражение для $a_{n}$ и $c$ из условия варианта, получим 
+$$\left|\frac{2n+3}{n+5}-2\right|<\varepsilon$$
+Неравенство запишем в виде двойного неравенства и приведём выражение под знаком модуля к общему знаменателю, получим
+$${-}\varepsilon <\dfrac{7}{n+5}<\varepsilon$$
+Заметим, что левое неравенство выполнено для любого номера $n\in \mathbb{N}$ поэтому, будем рассматривать правое неравенство
+$$\frac{7}{n+5}<\varepsilon$$
+Выполнив цепочку преобразований, перепишем неравенство относительно $n$, и, учитывая, что $n\in \mathbb{N}$, получим 
+$$n+5>\dfrac{7}{\varepsilon},$$
+$$n>\dfrac{7}{\varepsilon}-5,$$
+$$n>\dfrac{7-5\varepsilon}{\varepsilon},$$
+$$N(\varepsilon)=\biggl[\dfrac{7-5\varepsilon}{\varepsilon}\biggr],$$
+где $[\;]$ -- целая часть от числа. Заполним таблицу:
+\begin{center}
+	\begin{tabular}{ | p{25pt} | c | c | c | c |}
+		\hline
+		$\varepsilon$& $0{,}1$ & $0{,}01$ & $0{,}001$ \\ \hline
+		$N(\varepsilon)$ & 65  & 695 & 6995\\
+		\hline
+	\end{tabular}
+\end{center}
+{\bf Проверка:~}
+$$|a_{66}-c|=\dfrac{7}{71}<0{,}1,$$
+$$|a_{696}-c|=\dfrac{7}{701}<0{,}01,$$
+$$|a_{6996}-c|=\dfrac{7}{7001}<0{,}001.$$
+\newpage
+% ---------------------------- Problem 2----------------------------------
+\subsubsection*{\center Задача № 2.}
+{\bf Условие.~}
+Вычислить пределы функций
+$$
+\begin{array}{cc}
+	\text{\bf(а):} &  \lim\limits_{x\rightarrow-2}\dfrac{x^3+5x^2+8x+4}{x^3+3x^2-4} , \\[10pt]
+	\text{\bf(б):} & \lim\limits_{x\rightarrow+\infty} \dfrac{\sqrt[3]{1-x}+\sqrt{2x+x^2}}{x+\sqrt{x^7+3}} ,\\[10pt]
+	\text{\bf(в):} & \lim\limits_{x\rightarrow0} \dfrac{\sqrt[3]{8+3x+x^2}-2}{x+x^2},\\[10pt]
+	\text{\bf(г):} & \lim\limits_{x\rightarrow0} \biggl(\cos{\sqrt[3]{x}}\biggl)^{\dfrac{1}{x^2}}, \\[10pt]
+	\text{\bf(д):} & \lim\limits_{x\rightarrow\infty} \biggl(x^2\log_{5}\dfrac{x^2+6}{x^2+1}\biggl)^{\dfrac{x+5}{x}} , \\[10pt]
+	\text{\bf(е):}  & \lim\limits_{x\rightarrow\dfrac{\pi}{2}} \dfrac{\ln{\sin{x}}}{\sin^2{4x}} . \\
+\end{array}
+$$
+\\
+{\bf Решение.~}\\
+\\
+\text{\bf(а):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow-2}\dfrac{x^3+5x^2+8x+4}{x^3+3x^2-4} =  \lim\limits_{x\rightarrow-2}  \dfrac{(x+2)^2(x+1)}{(x-1)(x+2)^2} = \lim\limits_{x\rightarrow-2}\dfrac{x+1}{x-1}=\dfrac{1}{3}
+\end{array}
+$$
+\\
+\text{\bf(б):}
+$$
+\begin{array}{l}
+	\lim\limits_{x\rightarrow+\infty} \dfrac{\sqrt[3]{1-x}+\sqrt{2x+x^2}}{x+\sqrt{x^7+3}}=\lim\limits_{x\rightarrow+\infty} \dfrac{\sqrt{2x+x^2}}{\sqrt{x^7+3}}=\lim\limits_{x\rightarrow+\infty}\dfrac{x}{x^{3.5}}=\lim\limits_{x\rightarrow+\infty}\dfrac{1}{x^{2.5}}=0
+\end{array}
+$$
+\text{\bf(в):}
+$$
+\begin{array}{l} 
+	\lim\limits_{x\rightarrow0} \dfrac{\sqrt[3]{8+3x+x^2}-2}{x+x^2} =\lim\limits_{x\rightarrow0}=\dfrac{2\sqrt[3]{1+\dfrac{3x}{8}+\dfrac{x^2}{8}}-2}{x+x^2}= \biggl[\dfrac{0}{0} \biggl]= \biggl| \sqrt[3]{1+\dfrac{3x}{8}+\dfrac{x^2}{8}} \sim 1+\dfrac{3x+x^2}{24}, x \to 0 \biggl|=\\= \lim\limits_{x\rightarrow0} \dfrac{2(1+\dfrac{3x+x^2}{24})-2}{x} = \lim\limits_{x\rightarrow0} \dfrac{3x+x^2}{12x}=\lim\limits_{x\rightarrow0}(\dfrac{1}{4}+\dfrac{x}{12})=\dfrac{1}{4}
+\end{array}
+$$
+\\
+\text{\bf(г):}
+$$
+\begin{array}{l}
+	\lim\limits_{x\rightarrow0}\biggl(\cos{\sqrt[3]{x}}\biggl)^{\dfrac{1}{x^2}}=\biggl| \cos{\sqrt[3]{x}} \sim 1-\dfrac{\sqrt[3]{x^2}}{2}, x \to 0 \biggl|=\lim\limits_{x\rightarrow0} \biggl(1-\dfrac{\sqrt[3]{x^2}}{2}\biggl)^{\dfrac{1}{x^2}} = \lim\limits_{x\rightarrow0}\biggl(1-\dfrac{\sqrt[3]{x^2}}{2}\biggl)^{\dfrac{1}{x^2}*\dfrac{2}{\sqrt[3]{x^2}}*\dfrac{\sqrt[3]{x^2}}{2}}=\\=\lim\limits_{x\rightarrow0}\biggl(e\biggl)^{\dfrac{-\sqrt[3]{x^2}}{2x^2}}= \lim\limits_{x\rightarrow0}e^{\dfrac{-1}{\sqrt[3]{x^4}}}=e^{-\infty}=0
+\end{array}
+$$
+\\
+\text{\bf(д):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow\infty} \biggl(x^2\log_{5}\dfrac{x^2+6}{x^2+1}\biggl)^{\dfrac{x+5}{x}}=\lim\limits_{x\rightarrow\infty} \biggl(x^2\log_{5}\dfrac{(x^2+1)+5}{x^2+1}\biggl)^1=\lim\limits_{x\rightarrow\infty}\biggl(x^2\log_{5}\big({1+\dfrac{5}{x^2+1}}\big)\biggl)=\\=\biggl| \log_{5}\biggl({1+\dfrac{5}{x^2+1}}\biggl) \sim \dfrac{\dfrac{5}{x^2+1}}{\ln{5}}, {\dfrac{5}{x^2+1}} \to 0 \biggl|=\lim\limits_{x\rightarrow\infty}\biggl(\dfrac{5x^2}{(x^2+1)\ln{5}}\biggl)=\dfrac{5}{\ln{5}}*\lim\limits_{x\rightarrow\infty}\dfrac{x^2}{x^2+1}=\dfrac{5}{\ln{5}}
+\end{array}
+$$
+\text{\bf(е):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow\dfrac{\pi}{2}} \dfrac{\ln(\sin{x})}{\sin^2{4x}}=\left| y=x-\dfrac{\pi}{2}, y \to 0\right|= \lim\limits_{y\rightarrow0}\dfrac{\ln{\biggl(\sin{\big(y+\dfrac{\pi}{2}\big)}\biggl)}}{\sin^2{4y}}=\lim\limits_{y\rightarrow0}\dfrac{\ln{\biggl(\sin{y}*\cos{\dfrac{\pi}{2}}+\sin{\dfrac{\pi}{2}}*\cos{y}\biggl)}}{\sin^2{4y}}=\\=\lim\limits_{y\rightarrow0}\dfrac{\ln{\big(\cos{y}\big)}}{\sin^2{4y}}=\lim\limits_{y\rightarrow0}\dfrac{\ln{\big(1-\dfrac{y^2}{2}\big)}}{16y^2}=\lim\limits_{y\rightarrow0}\dfrac{\dfrac{-y^2}{2}}{16y^2}=\dfrac{-y^2}{32y^2}=-\dfrac{1}{32}
+\end{array} $$
+\newpage
+% ---------------------------- Problem 3----------------------------------
+\subsubsection*{\center Задача № 3.}
+{\bf Условие.~}\\
+\text{\bf(а):} Показать, что данные функции
+$f(x)$ и $g(x)$ являются бесконечно малыми или бесконечно большими
+при указанном стремлении аргумента. \\
+\text{\bf(б):} Для каждой функции $f(x)$ и $g(x)$ записать главную часть
+(эквивалентную ей функцию)  вида $C(x-x_0)^{\alpha}$ при $x\rightarrow x_0$ или $Cx^{\alpha}$
+при $x\rightarrow\infty$, указать их порядки малости (роста). \\
+\text{\bf(в):} Сравнить функции $f(x)$ и $g(x)$ при указанном стремлении.
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		№ варианта & функции $f(x)$ и $g(x)$ & стремление \\[6pt]
+		\hline
+		28 & $f(x) = \sqrt{\dfrac{2+x}{2-x}},~g(x)=\dfrac{1}{3^x-9}$ & $x\rightarrow2-$ \\
+		\hline
+	\end{tabular}
+\bigskip
+\\
+{\bf Решение.~}\\
+\end{center}
+\medskip
+\text{\bf(а):}~Покажем, что $f(x)$ и $g(x)$ бесконечно большие функции.
+\\
+$$
+\begin{array}{cc}
+f(x) = \lim\limits_{x\rightarrow2-}\sqrt{\dfrac{2+x}{2-x}}=\left| y=2-x, y \to 0\right|=\lim\limits_{y\rightarrow0}\sqrt{\dfrac{2+2-y}{2-2+y}}=\lim\limits_{y\rightarrow0}\sqrt{\dfrac{4-y}{y}}=\lim\limits_{y\rightarrow0}\sqrt{\dfrac{4}{y}-1}=\\=\lim\limits_{y\rightarrow0}\dfrac{2}{\sqrt{y}}\sqrt{1-\dfrac{y}{4}}\sim\dfrac{2}{\sqrt{y}}*\left(1-\dfrac{y}{8}\right)=\lim\limits_{x\rightarrow2-}\dfrac{2}{\sqrt{2-x}}*\left(1-\dfrac{2-x}{8}\right)=\infty
+\end{array}
+$$
+\\
+$$
+\begin{array}{cc}
+g(x) = \lim\limits_{x\rightarrow2-}\dfrac{1}{3^x-9}=\lim\limits_{x\rightarrow2-}\dfrac{1}{9(3^{x-2}-1)}=\lim\limits_{x\rightarrow2-}\dfrac{1}{9(e^{(x-2)\ln{3}}-1)}=\\=\biggl| e^{(x-2)\ln{3}}-1 \sim {(x-2)\ln{3}}, {(x-2)} \to 0 \biggl|=\dfrac{1}{9\ln{3}}*\lim\limits_{x\rightarrow2-}\dfrac{1}{x-2}=-\infty
+\end{array}
+$$
+\text{\bf(б):}~Так как $f(x)$ и $g(x)$ бесконечно большие функции, то эквивалентными им будут функции вида 
+$C{(x-x_{0})^{\alpha}}$ при $x\rightarrow x_{0}$. Найдём эквивалентную для $g(x)$ из условия
+
+$$
+\lim\limits_{x\rightarrow+\infty}\dfrac{g(x)}{(x-x_{0})^{\alpha}} = C,
+$$
+где $C$ --- некоторая константа. Рассмотрим предел
+$$
+\lim\limits_{x\rightarrow2-}\dfrac{g(x)}{(x-2)^\alpha}=\lim\limits_{x\rightarrow2-}\dfrac{\dfrac{1}{9\ln{3}}*\dfrac{1}{x-2}}{(x-2)^\alpha}=\dfrac{1}{9\ln{3}}*\lim\limits_{x\rightarrow2-}\dfrac{1}{(x-2)(x-2)^a}
+$$
+при $\alpha=-1$ предел равен $\dfrac{1}{9\ln{3}}$, отсюда $C=\dfrac{1}{9\ln{3}}$ и \\$$ g(x)\sim \dfrac{1}{9\ln{3}}(x-2)^{-1}\sim-\dfrac{1}{9\ln{3}}(2-x)^{-1}~\text{при}~x\rightarrow2-.$$
+\\
+для $f(x)$ все проще. При $x\rightarrow2-$ функция $f(x)$ эквивалентна функции $\frac{2}{\sqrt{2-x}}$, так как второй множитель стремиться к 1. Это и будет главной частью $f(x)$
+$$ f(x)\sim2{(x-2)^{-\frac{1}{2}}}~\text{при}~x\rightarrow2-$$
+\text{\bf(в):}~для сравнения функций $f(x)$ и $g(x)$ рассмотрим предел их данном стремлении.
+$$
+\lim\limits_{x\rightarrow2-}\dfrac{f(x)}{g(x)}=\lim\limits_{x\rightarrow2-}\dfrac{2(2-x)^{-\frac{1}{2}}}{-\dfrac{1}{9\ln{3}}(2-x)^{-1}}=-18\ln{3}*\lim\limits_{x\rightarrow2-}(2-x)^{\frac{1}{2}}=0
+$$
+отсюда $g(x)$ есть бесконечно большая функция более высокого порядка, чем $f(x)$.
+\end{document}
+© 2021 GitHub, Inc.
